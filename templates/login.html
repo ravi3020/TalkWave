@@ -1,0 +1,40 @@
+{% include "head.html" %}
+
+<div class="container" id="container">
+    <div class="form_container sign_up">
+        <form>
+            <h1>Create Account</h1>
+            <span>user your your eamil for registration</span>
+            <input type="text" placeholder="name">
+            <input type="text" placeholder="username">
+            <input type="text" placeholder="email">
+            <input type="text" placeholder="password">
+            <button>Sign Up</button>
+        </form>
+    </div>
+    <div class="form_container sign_in">
+        <form>
+            <h1>Sign In</h1>
+            <span>user your username for login</span>
+            <input type="text" placeholder="username">
+            <input type="text" placeholder="password">
+            <a href="#">Forgot password</a>
+            <button>Sign In</button>
+        </form>
+    </div>
+    <div class="togle_container">
+        <div class="togle">
+            <div class="toggle_pannel  toggle_left">
+                <h1>Welcome back</h1>
+                <p>Enter your details</p>
+                <button class="hidden" id="login">Sign In</button>
+            </div>
+            <div class="toggle_pannel  toggle_right">
+                <h1>Hi frnd see you</h1>
+                <p>Register with your personal details</p>
+                <button class="hidden" id="register">Sign Up</button>
+            </div>
+        </div>
+        
+    </div>
+</div>
