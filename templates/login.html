@@ -22,8 +22,8 @@
             <button>Sign In</button>
         </form>
     </div>
-    <div class="togle_container">
-        <div class="togle">
+    <div class="toggle_container">
+        <div class="toggle">
             <div class="toggle_pannel  toggle_left">
                 <h1>Welcome back</h1>
                 <p>Enter your details</p>
@@ -35,6 +35,18 @@
                 <button class="hidden" id="register">Sign Up</button>
             </div>
         </div>
-        
     </div>
 </div>
+
+<script>
+    const container = document.getElementById("container");
+    const registerbtn = document.getElementById("register");
+    const loginbtn = document.getElementById("login");
+
+    registerbtn.addEventListener('click',()=>{
+    container.classList.add("active");
+    })
+    loginbtn.addEventListener('click',()=>{
+    container.classList.remove("active");
+    })
+</script>
