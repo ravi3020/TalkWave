@@ -169,18 +169,31 @@ body{
 .container.active .toggle_right{
    transform: translateX(200%);
 }
+<<<<<<< HEAD
 
-.label{
-    display: inline-block;
+label{
+    margin-right: 20px;
     margin-left: 10px;
 }
+=======
+>>>>>>> a99a17b7188f3a72ae77b7303efcfb17679dbd8d
 .radio{
     display: flex;
+    align-items: center;
+<<<<<<< HEAD
+    left: 10px                                       ;
 }
-.radio input[type="radio"]{
-    margin-right: 15px;
+.radio_button{
+    margin-right: 25px;
+    justify-content: space-between;
     padding-right: 20px;
+=======
+    justify-content: space-between;
 }
-
+label{
+   margin-right: 33px;
+   margin-left: 10px;
+>>>>>>> a99a17b7188f3a72ae77b7303efcfb17679dbd8d
+}
 
 
