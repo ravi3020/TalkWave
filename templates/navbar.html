@@ -8,10 +8,13 @@
     body {
       margin: 0;
       font-family: Arial, sans-serif;
+      background-image: url("https://images.rawpixel.com/image_800/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvdjQ4MS1iYi1uaW5nLTA3XzEuanBn.jpg");
+      background-repeat: no-repeat;
+      background-size: cover;
     }
 
     .navbar {
-      background-color: white;
+      background-color: None;
       overflow: hidden;
     }
 
@@ -29,12 +32,12 @@
     }
 
     img{
-        float: left;
+        float: right;
         width: 40px;
         height: auto;
         padding: 5px;
         margin: 8px;
-        margin-right: 0px;
+        margin-right: 30px;
     }
 
     .navbar a {
@@ -46,7 +49,6 @@
       text-decoration: none;
       margin: 8px;
     }
-
 
     .navbar a:hover {
         i{
@@ -64,7 +66,7 @@
 
 <div class="navbar" id="myNavbar">
     <img src="../static/logo.png">
-    <a href=""><i class="fa-solid fa-user"></i> Account</a>
+    <a href="account" onclick="menuToggle()"><i class="fa-solid fa-user"></i> Account</a>
     <a href=""><i class="fa-solid fa-comments"></i> Chat</a>
     <a href=""><i class="fa-solid fa-users"></i> Friends</a>
     <a href=""><i class="fa-solid fa-bell"></i> Requests</a>

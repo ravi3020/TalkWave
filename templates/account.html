@@ -1,0 +1,33 @@
+{% include 'navbar.html'%}
+
+<head>
+    <meta charset="UTF-8">
+    <title>TalkWave</title>
+    <link rel="stylesheet" href="../static/account.css">
+</head>
+<script>
+    function menuToggle(){
+        document.querySelector(".menu").visibility = "active";
+    }
+     const myElement = document.getElementById("menu");
+        const statusAttribute = myElement.getAttribute("class");
+        console.log(statusAttribute);
+</script>
+<body>
+    <div class="action">
+        <div class="menu" id="menu" >
+            <div class="profile">
+                <img src="">
+            </div>
+            <div>
+                <h4></h4>
+            </div>
+            <ul>
+                <li><i class="fa fa-user" aria-hidden="true"></i><a href="#">Profile</a></li>
+                <li><i class="fa fa-pencil" aria-hidden="true"></i><a href="#"> Edit Profile</a></li>
+                <li><i class="fa fa-cog" aria-hidden="true"></i><a href="#">Settings</a></li>
+                <li><i class="fa fa-sign-out" aria-hidden="true"></i><a href="#">Logout</a></li>
+            </ul>
+        </div>
+    </div>
+</body>
