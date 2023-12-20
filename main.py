@@ -3,15 +3,16 @@ import os
 import pymysql
 
 app = Flask(__name__)
-conn = pymysql.connect(host="localhost", user="root", password="root", db="TalkWave")
+conn = pymysql.connect(host="localhost", user="root", password="Luther@1234", db="TalkWave")
 cursor = conn.cursor()
 
 app_root = os.path.dirname(os.path.abspath(__file__))
 app_root = app_root+"/static"
 
-# @app.route("/")
-# def head():
-#     return render_template("head.html")
+
+@app.route("/navbar")
+def navbar():
+    return render_template("navbar.html")
 
 @app.route("/")
 def login():
