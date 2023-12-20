@@ -168,3 +168,18 @@ body{
 .container.active .toggle_right{
    transform: translateX(200%);
 }
+
+.label{
+    display: inline-block;
+    margin-left: 10px;
+}
+.radio{
+    display: flex;
+}
+.radio input[type="radio"]{
+    margin-right: 15px;
+    padding-right: 20px;
+}
+
+
+

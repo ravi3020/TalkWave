@@ -2,22 +2,26 @@
 
 <div class="container" id="container">
     <div class="form_container sign_up">
-        <form>
+        <form action="account_registration">
             <h1>Create Account</h1>
-            <span>user your your eamil for registration</span>
-            <input type="text" placeholder="name">
-            <input type="text" placeholder="username">
-            <input type="text" placeholder="email">
-            <input type="text" placeholder="password">
+            <span>User Your Email For Registration</span>
+            <input type="text" placeholder="Name" name="account_name" required>
+            <input type="text" placeholder="Username" name="account_username" required>
+            <input type="email" placeholder="Email" name="account_email" required>
+            <input type="password" placeholder="Password" name="account_password" required>
+            <div class="radio">
+                 <input type="radio" name="gender" value="Male" id="male" class="radio_button" required><label for="male">Male</label>
+                 <input type="radio" name="gender" value="Female" id="female" class="radio_button" required><label for="female">Female</label>
+            </div>
             <button>Sign Up</button>
         </form>
     </div>
     <div class="form_container sign_in">
-        <form>
+        <form action="account_login">
             <h1>Sign In</h1>
-            <span>user your username for login</span>
-            <input type="text" placeholder="username">
-            <input type="text" placeholder="password">
+            <span>User Your Username for Login</span>
+            <input type="text" placeholder="Username" name="account_username">
+            <input type="password" placeholder="Password" name="account_password">
             <a href="#">Forgot password</a>
             <button>Sign In</button>
         </form>
@@ -26,12 +30,12 @@
         <div class="toggle">
             <div class="toggle_pannel  toggle_left">
                 <h1>Welcome back</h1>
-                <p>Enter your details</p>
+                <p>Enter Your Details</p>
                 <button class="hidden" id="login">Sign In</button>
             </div>
             <div class="toggle_pannel  toggle_right">
                 <h1>Hi frnd see you</h1>
-                <p>Register with your personal details</p>
+                <p>Register With your Personal Details</p>
                 <button class="hidden" id="register">Sign Up</button>
             </div>
         </div>
