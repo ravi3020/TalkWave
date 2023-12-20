@@ -36,5 +36,15 @@ def account_registration():
         return render_template("msg.html", message="Already Exist")
 
 
+@app.route("/account_login")
+def account_login():
+    account_username = request.args.get("account_username")
+    account_password = request.args.get("account_password")
+    count = cursor.execute("select * from account where account_username = '"+str(account_username)+"' and account_password = '"+str(account_password)+"'")
+    if count > 0:
+        return redirect("/navbar")
+    else:
+        return render_template("msg.html", message="Please Enter Valid Credentials")
+
 
 app.run(debug=True)
