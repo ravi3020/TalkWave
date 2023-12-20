@@ -170,16 +170,19 @@ body{
    transform: translateX(200%);
 }
 
-.label{
-    display: inline-block;
-    margin-left: 10px;
+label{
+    
 }
 .radio{
     display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    left: 0;
 }
-.radio input[type="radio"]{
-    margin-right: 15px;
-    padding-right: 20px;
+.radio_button{
+    margin-right: 25px;
+    /* padding-right: 20px; */
 }
 
 
