@@ -3,13 +3,8 @@ import os
 import pymysql
 
 app = Flask(__name__)
-<<<<<<< HEAD
-app.secret_key = "TalkWave"
-conn = pymysql.connect(host="localhost", user="root", password="Sharmi@2020", db="TalkWave")
-=======
 app.secret_key = "talkwave"
 conn = pymysql.connect(host="localhost", user="root", password="root", db="TalkWave")
->>>>>>> ac96a3d9950d85b33593f7b7cf8891e4c589dfd9
 cursor = conn.cursor()
 
 app_root = os.path.dirname(os.path.abspath(__file__))
@@ -61,7 +56,7 @@ def account_login():
     else:
         return render_template("msg.html", message="Please Enter Valid Credentials")
 
-<<<<<<< HEAD
+
 @app.route("/account")
 def account():
     account_id = session['account_id']
@@ -70,13 +65,12 @@ def account():
     account = cursor.fetchone()
     print(account)
     return render_template("account.html",account=account)
-=======
+
 
 @app.route("/logout")
 def logout():
     session.clear()
     return redirect("/login")
 
->>>>>>> ac96a3d9950d85b33593f7b7cf8891e4c589dfd9
 
 app.run(debug=True)
