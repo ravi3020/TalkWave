@@ -23,9 +23,9 @@ def navbar():
     return render_template("navbar.html")
 
 
-# @app.route("/")
-# def login():
-#     return render_template("login.html")
+@app.route("/")
+def login():
+    return render_template("login.html")
 
 
 @app.route("/account_registration")
