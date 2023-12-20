@@ -3,7 +3,8 @@ import os
 import pymysql
 
 app = Flask(__name__)
-conn = pymysql.connect(host="localhost", user="root", password="Luther@1234", db="TalkWave")
+app.secret_key = "talkwave"
+conn = pymysql.connect(host="localhost", user="root", password="root", db="TalkWave")
 cursor = conn.cursor()
 
 app_root = os.path.dirname(os.path.abspath(__file__))
@@ -23,9 +24,6 @@ def login():
 @app.route("/navbar")
 def navbar():
     return render_template("navbar.html")
-
-
-
 
 
 @app.route("/account_registration")
@@ -53,6 +51,12 @@ def account_login():
         return redirect("/navbar")
     else:
         return render_template("msg.html", message="Please Enter Valid Credentials")
+
+
+@app.route("/logout")
+def logout():
+    session.clear()
+    return redirect("/login")
 
 
 app.run(debug=True)
