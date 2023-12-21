@@ -34,6 +34,7 @@ def account_registration():
     account_password = request.form.get("account_password")
     gender = request.form.get("gender")
     profile = request.files.get("profile")
+    print(profile)
     path = app_root + "/profiles/" + profile.filename
     profile.save(path)
     count = cursor.execute("select * from account where account_username = '"+str(account_username)+"' or account_email = '"+str(account_email)+"'")
@@ -68,6 +69,17 @@ def account():
     account = cursor.fetchone()
     print(account)
     return render_template("account.html", account=account)
+
+
+@app.route("/get_friends", methods=['get'])
+def get_friends():
+    search = request.args.get("search")
+    if search != "":
+        cursor.execute("select * from account where account_username like'%" + search + "%'")
+    else:
+        return "No Users Are Found"
+    friends = cursor.fetchall()
+    return render_template("get_friends.html", friends=friends)
 
 
 @app.route("/logout")

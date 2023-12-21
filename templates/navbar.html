@@ -25,7 +25,7 @@
         border: 1px solid #d9d9d9;
         outline: none;
         background-color: #e6e6e6;
-        color: white;
+        color: black;
         height: 35px;
         text-align: center;
         border-radius: 20px;
@@ -59,21 +59,44 @@
       color: white;
     }
 
-    }
   </style>
 </head>
+<script>
+
+    function get_friends() {
+        let search = document.getElementById("search").value;
+        console.log(search)
+        let url = "http://127.0.0.1:5000/get_friends?search="+search;
+
+        var xhttp = new XMLHttpRequest();
+        xhttp.open("GET", url, true);
+        xhttp.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+        xhttp.onreadystatechange = function () {
+            if (this.readyState == 4 && this.status == 200) {
+                let data = this.responseText;
+
+                document.getElementById("get_friends").innerHTML = data;
+                }
+            }
+
+        xhttp.send();
+    }
+</script>
+
 <body>
-
-<div class="navbar" id="myNavbar">
-    <img src="../static/logo.png">
-    <a href="account" onclick="menuToggle()"><i class="fa-solid fa-user"></i> Account</a>
-    <a href="logout"><i class="fa-solid fa-right-from-bracket"></i>Logout</a>
-    <a href=""><i class="fa-solid fa-comments"></i> Chat</a>
-    <a href=""><i class="fa-solid fa-users"></i> Friends</a>
-    <a href=""><i class="fa-solid fa-bell"></i> Requests</a>
-    <input type="search"  name="search" id="search" class="search" placeholder="Search">
-</div>
-
+    <div class="navbar" id="myNavbar">
+        <img src="../static/logo.png">
+        <a href="account" onclick="menuToggle()"><i class="fa-solid fa-user"></i> Account</a>
+        <a href="logout"><i class="fa-solid fa-right-from-bracket"></i>Logout</a>
+        <a href=""><i class="fa-solid fa-comments"></i> Chat</a>
+        <a href=""><i class="fa-solid fa-users"></i> Friends</a>
+        <a href=""><i class="fa-solid fa-bell"></i> Requests</a>
+        <form action="navbar" id="searchFriend">
+            <input type="text"  name="search" id="search" class="search" placeholder="Search" onkeyup="get_friends()">
+        </form>
+         <div id="get_friends">
+         </div>
+    </div>
 </body>
 </html>
 
