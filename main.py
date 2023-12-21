@@ -26,16 +26,19 @@ def navbar():
     return render_template("navbar.html")
 
 
-@app.route("/account_registration")
+@app.route("/account_registration", methods=['post'])
 def account_registration():
-    account_name = request.args.get("account_name")
-    account_username = request.args.get("account_username")
-    account_email = request.args.get("account_email")
-    account_password = request.args.get("account_password")
-    gender = request.args.get("gender")
+    account_name = request.form.get("account_name")
+    account_username = request.form.get("account_username")
+    account_email = request.form.get("account_email")
+    account_password = request.form.get("account_password")
+    gender = request.form.get("gender")
+    profile = request.files.get("profile")
+    path = app_root + "/profiles/" + profile.filename
+    profile.save(path)
     count = cursor.execute("select * from account where account_username = '"+str(account_username)+"' or account_email = '"+str(account_email)+"'")
     if count == 0:
-        cursor.execute("insert into account(account_name, account_username, account_email, account_password, gender) value('"+str(account_name)+"', '"+str(account_username)+"', '"+str(account_email)+"', '"+str(account_password)+"', '"+str(gender)+"')")
+        cursor.execute("insert into account(account_name, account_username, account_email, account_password, gender, profile) value('"+str(account_name)+"', '"+str(account_username)+"', '"+str(account_email)+"', '"+str(account_password)+"', '"+str(gender)+"', '"+str(profile.filename)+"')")
         conn.commit()
         return redirect("/")
     else:
@@ -64,7 +67,7 @@ def account():
     cursor.execute("select * from account where account_id = '"+str(account_id)+"'")
     account = cursor.fetchone()
     print(account)
-    return render_template("account.html",account=account)
+    return render_template("account.html", account=account)
 
 
 @app.route("/logout")
