@@ -6,7 +6,7 @@
    font-family: 'Tilt Neon', sans-serif;
 }
 body{
-   background-image: url("https://images.rawpixel.com/image_800/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvdjQ4MS1iYi1uaW5nLTA3XzEuanBn.jpg");
+   background-image: url("https://wallpapercrafter.com/th800/89750-dark-gradient-artist-artwork-digital-art-hd-4k-blur-simple-background.jpg");
    display: flex;
    flex-direction: column;
    align-items: center;
@@ -169,6 +169,7 @@ body{
 .main_container.active .toggle_right{
    transform: translateX(200%);
 }
+<<<<<<< HEAD
 
 label{
     margin-right: 20px;
@@ -184,6 +185,11 @@ label{
     margin-right: 25px;
     justify-content: space-between;
     padding-right: 20px;
+=======
+.radio{
+    display: flex;
+    align-items: center;
+>>>>>>> e7358b0a61dad1516a5732cdce249103e073f27a
     justify-content: space-between;
 }
 label{

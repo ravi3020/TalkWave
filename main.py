@@ -3,9 +3,11 @@ import os
 import pymysql
 
 app = Flask(__name__)
-app.secret_key = "talkwave"
+app.secret_key = "TalkWave"
+
 conn = pymysql.connect(host="localhost", user="root", password="root", db="TalkWave")
 cursor = conn.cursor()
+
 
 app_root = os.path.dirname(os.path.abspath(__file__))
 app_root = app_root+"/static"
@@ -34,7 +36,6 @@ def account_registration():
     account_password = request.form.get("account_password")
     gender = request.form.get("gender")
     profile = request.files.get("profile")
-    print(profile)
     path = app_root + "/profiles/" + profile.filename
     profile.save(path)
     count = cursor.execute("select * from account where account_username = '"+str(account_username)+"' or account_email = '"+str(account_email)+"'")
@@ -53,9 +54,8 @@ def account_login():
     count = cursor.execute("select * from account where account_username = '"+str(account_username)+"' and account_password = '"+str(account_password)+"'")
     if count > 0:
         account = cursor.fetchall()
-        account = account[0]
-        session['account_id'] = account[0]
-        session['role'] = 'account'
+        session['account_id'] = account[0][0]
+        session['role'] = 'Friend'
         return redirect("/navbar")
     else:
         return render_template("msg.html", message="Please Enter Valid Credentials")
@@ -64,10 +64,8 @@ def account_login():
 @app.route("/account")
 def account():
     account_id = session['account_id']
-    print(account_id)
     cursor.execute("select * from account where account_id = '"+str(account_id)+"'")
     account = cursor.fetchone()
-    print(account)
     return render_template("account.html", account=account)
 
 
