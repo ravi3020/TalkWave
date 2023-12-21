@@ -4,18 +4,16 @@
     <meta charset="UTF-8">
     <title>TalkWave</title>
     <link rel="stylesheet" href="../static/account.css">
-</head>
-<script>
-    function menuToggle() {
-        const toggleMenu = document.querySelector(".menu");
-        toggleMenu.classList.toggle("active");
-    }
+    <script>
+        let submenu = document.getElementById("sub-menu");
 
-    // Function to open the menu when clicking the "Account" link
-    function openMenu() {
-        menuToggle();
-    }
-</script>
+        function toggleMenu(){
+            alert("hi")
+            submenu.classList.toggle("open-menu");
+        }
+    </script>
+</head>
+
 <body>
     <div class="action">
         <div class="menu">

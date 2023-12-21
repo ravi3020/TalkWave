@@ -1,160 +1,172 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background-image: url("https://images.rawpixel.com/image_800/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvdjQ4MS1iYi1uaW5nLTA3XzEuanBn.jpg");
-      background-repeat: no-repeat;
-      background-size: cover;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            let submenu = document.querySelector(".menu");
 
-    .navbar {
-      background-color: None;
-      overflow: hidden;
-    }
-    .navbar form{
-        padding: 0.5rem;
-        border-radius: 30px;
-        background-color: #e6e6e6;
-        display: flex;
-        align-items: center;
-        float: right;
-        margin-top: 15px;
-        margin-right: 30px;
-        margin-left: 400px;
-        height: 35px;
-    }
-    .navbar form .search{
-       flex: 1;
-       font-size: 1.1rem;
-       color: black;
-       border-radius: 30px;
-       border: none;
-       outline: none;
-       background-color: #e6e6e6;
-       padding: 1rem;
-       display: none;
-    }
+            function toggleMenu() {
+                event.preventDefault(); // Prevent the default link behavior
+                submenu.classList.toggle("open-menu");
+            }
 
-    .search::placeholder{
-        color: grey;
-    }
+            // Add event listener to the "Account" link
+            let accountLink = document.querySelector("#account-link");
+            accountLink.addEventListener("click", toggleMenu);
+        });
 
-    .navbar form .search.active{
-        width: 200px;
-        padding: 1rem;
-        display: block;
-    }
+        document.addEventListener('DOMContentLoaded', function() {
+          let input = document.querySelector(".search");
+          let clearicon = document.querySelector(".clear-icon");
+          let searchicon = document.querySelector(".search-icon");
 
-    .navbar form .clear-icon{
-       flex: 1;
-       font-size: 1.1rem;
-       color: black;
-       border-radius: 10px;
-       border: none;
-       outline: none;
-       width: 10px;
-       height: 25px;
-       align-items: center;
-       justify-content: center;
-       display: none;
-    }
-    .navbar form .clear-icon.active{
-        display: block;
-    }
+          let form = document.getElementById("form");
 
-    .navbar form .clear-icon i{
-        color: black;
-        cursor: pointer;
-        font-size: 1.3rem;
-    }
+          const search = () => {
+              input.classList.toggle("active");
+              clearicon.classList.toggle("active");
+          }
 
-    .navbar form .clear-icon i:hover{
-        color: red;
+          const clearSearch = () => {
+              input.value = ""; // Clear the input value
+          }
 
-    }
+          // Call the search function when the search icon is clicked
+            searchicon.addEventListener("click", search);
 
-    .navbar form .search-icon{
-        width: 45px;
-        height: 45px;
-        border-radius: 25px;
-        border: none;
-        background-color: purple;
-        color: white;
-        font-size: 1.2rem;
-        cursor: pointer;
-        transition: background-color 0.2s;
-    }
-
-    .navbar form .search-icon:hover{
-        background-color: black;
-    }
-
-    img{
-        float: right;
-        width: 40px;
-        height: auto;
-        padding: 5px;
-        margin: 8px;
-        margin-right: 30px;
-    }
-
-    .navbar a {
-      float: right;
-      display: block;
-      color: black;
-      text-align: center;
-      padding: 14px 16px;
-      text-decoration: none;
-      margin: 8px;
-    }
-
-    .navbar a:hover {
-        i{
-            color: black;
+          // Call the clearSearch function when the clear icon is clicked
+            clearicon.addEventListener("click", clearSearch);
+        });
+    </script>
+    <style>
+        body {
+          margin: 0;
+          font-family: Arial, sans-serif;
+          background-image: url("https://images.rawpixel.com/image_800/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvdjQ4MS1iYi1uaW5nLTA3XzEuanBn.jpg");
+          background-repeat: no-repeat;
+          background-size: cover;
         }
-      background-color: #009999;
-      border-radius: 30px;
-      color: white;
-    }
 
-  </style>
+        .navbar {
+          background-color: None;
+          overflow: hidden;
+        }
+        .navbar form{
+            padding: 0.5rem;
+            border-radius: 30px;
+            background-color: #e6e6e6;
+            display: flex;
+            align-items: center;
+            float: right;
+            margin-top: 15px;
+            margin-right: 30px;
+            margin-left: 400px;
+            height: 35px;
+        }
+        .navbar form .search{
+           flex: 1;
+           font-size: 1.1rem;
+           color: black;
+           border-radius: 30px;
+           border: none;
+           outline: none;
+           background-color: #e6e6e6;
+           padding: 1rem;
+           display: none;
+        }
+
+        .search::placeholder{
+            color: grey;
+        }
+
+        .navbar form .search.active{
+            width: 240px;
+            padding: 1rem;
+            display: block;
+        }
+
+        .navbar form .clear-icon{
+           flex: 1;
+           font-size: 1.1rem;
+           color: black;
+           border-radius: 10px;
+           border: none;
+           outline: none;
+           width: 10px;
+           height: 25px;
+           align-items: center;
+           justify-content: center;
+           display: none;
+        }
+        .navbar form .clear-icon.active{
+            display: block;
+        }
+
+        .navbar form .clear-icon i{
+            color: black;
+            cursor: pointer;
+            font-size: 1.3rem;
+        }
+
+        .navbar form .clear-icon i:hover{
+            color: red;
+
+        }
+
+        .navbar form .search-icon{
+            width: 45px;
+            height: 45px;
+            border-radius: 25px;
+            border: none;
+            background-color: purple;
+            color: white;
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+
+        .navbar form .search-icon:hover{
+            background-color: black;
+        }
+
+        img{
+            float: right;
+            width: 40px;
+            height: auto;
+            padding: 5px;
+            margin: 8px;
+            margin-right: 30px;
+        }
+
+        .navbar a {
+          float: right;
+          display: block;
+          color: black;
+          text-align: center;
+          padding: 14px 16px;
+          text-decoration: none;
+          margin: 8px;
+        }
+
+        .navbar a:hover {
+            i{
+                color: black;
+            }
+          background-color: #009999;
+          border-radius: 30px;
+          color: white;
+        }
+    </style>
 </head>
-<script>
-    document.addEventListener('DOMContentLoaded', function() {
-      let input = document.querySelector(".search");
-      let clearicon = document.querySelector(".clear-icon");
-      let searchicon = document.querySelector(".search-icon");
-
-      let form = document.getElementById("form");
-
-      const search = () => {
-          input.classList.toggle("active");
-          clearicon.classList.toggle("active");
-      }
-
-      const clearSearch = () => {
-          input.value = ""; // Clear the input value
-      }
-
-      // Call the search function when the search icon is clicked
-        searchicon.addEventListener("click", search);
-
-      // Call the clearSearch function when the clear icon is clicked
-        clearicon.addEventListener("click", clearSearch);
-    });
-</script>
 <body>
 
 <div class="navbar" id="myNavbar">
     <img src="../static/logo.png">
 
-    <a href=""><i class="fa-solid fa-user"></i> Account</a>
+    <a href="account" id="account-link"><i class="fa-solid fa-user"></i>Account</a>
     <a href=""><i class="fa-solid fa-comments"></i> Chat</a>
     <a href=""><i class="fa-solid fa-users"></i> Friends</a>
     <a href=""><i class="fa-solid fa-bell"></i> Requests</a>

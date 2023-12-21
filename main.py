@@ -3,8 +3,8 @@ import os
 import pymysql
 
 app = Flask(__name__)
-
 app.secret_key = "TalkWave"
+
 conn = pymysql.connect(host="localhost", user="root", password="Sharmi@2020", db="TalkWave")
 cursor = conn.cursor()
 
@@ -17,16 +17,13 @@ app_root = app_root+"/static"
 def logo_animate():
     return render_template("logo_animate.html")
 
-
 @app.route("/login")
 def login():
     return render_template("login.html")
 
-
 @app.route("/navbar")
 def navbar():
     return render_template("navbar.html")
-
 
 @app.route("/account_registration")
 def account_registration():
@@ -50,14 +47,9 @@ def account_login():
     account_password = request.args.get("account_password")
     count = cursor.execute("select * from account where account_username = '"+str(account_username)+"' and account_password = '"+str(account_password)+"'")
     if count > 0:
-        account = cursor.fetchall()
-        account = account[0]
-        session['account_id'] = account[0]
-        session['role'] = 'account'
         return redirect("/navbar")
     else:
         return render_template("msg.html", message="Please Enter Valid Credentials")
-
 
 @app.route("/account")
 def account():
@@ -73,7 +65,6 @@ def account():
 def logout():
     session.clear()
     return redirect("/login")
-
 
 
 app.run(debug=True)

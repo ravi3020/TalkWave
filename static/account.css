@@ -8,39 +8,35 @@
     position: fixed;
     top: 20px;
     right: 110px;
-    visibility: hidden;
-    opacity: 0;
 }
 .action .menu{
     position: absolute;
-    top: 80px;
+    top: 50px;
     right: -10px;
     padding: 10px 20px;
-    background: #fff;
+    background: #FFFFF7;
     width: 200px;
     box-sizing: 0 5px 25px rgba(0,0,0,0.1);
     border-radius: 15px;
     transition: 0.5s;
-    visibility: hidden;
-    opacity: 0;
+    display: None;
+}
 
+.action .menu.open-menu{
+    display: block;
 }
-.action .menu .active{
-    visibility: visible;
-    opacity: 1;
-}
+
 .action .menu::before{
     content: '';
     position: absolute;
-    top: -5px;
+    top: -4px;
     right: 28px;
     width: 20px;
     height: 20px;
-    background: #fff;
+    background: #FFFFF7;
     transform: rotate(45deg);
 }
 
-}
 .action .menu .profile{
     position: relative;
     width: 60px;
@@ -48,6 +44,7 @@
     border-radius: 50px;
     overflow: hidden;
     cursor: pointer;
+
 }
 .action .menu .profile img{
     position: absolute;
