@@ -6,27 +6,30 @@
     <link rel="stylesheet" href="../static/account.css">
 </head>
 <script>
-    function menuToggle(){
-        document.querySelector(".menu").visibility = "active";
+    function menuToggle() {
+        const toggleMenu = document.querySelector(".menu");
+        toggleMenu.classList.toggle("active");
     }
-     const myElement = document.getElementById("menu");
-        const statusAttribute = myElement.getAttribute("class");
-        console.log(statusAttribute);
+
+    // Function to open the menu when clicking the "Account" link
+    function openMenu() {
+        menuToggle();
+    }
 </script>
 <body>
     <div class="action">
-        <div class="menu" id="menu" >
+        <div class="menu">
             <div class="profile">
                 <img src="">
             </div>
             <div>
-                <h4></h4>
+                <h4>{{account[1]}}</h4>
             </div>
             <ul>
                 <li><i class="fa fa-user" aria-hidden="true"></i><a href="#">Profile</a></li>
                 <li><i class="fa fa-pencil" aria-hidden="true"></i><a href="#"> Edit Profile</a></li>
                 <li><i class="fa fa-cog" aria-hidden="true"></i><a href="#">Settings</a></li>
-                <li><i class="fa fa-sign-out" aria-hidden="true"></i><a href="#">Logout</a></li>
+                <li><i class="fa fa-sign-out" aria-hidden="true"></i><a href="logout">Logout</a></li>
             </ul>
         </div>
     </div>
