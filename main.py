@@ -51,16 +51,6 @@ def account_login():
     else:
         return render_template("msg.html", message="Please Enter Valid Credentials")
 
-@app.route("/account")
-def account():
-    account_id = session['account_id']
-    print(account_id)
-    cursor.execute("select * from account where account_id = '"+str(account_id)+"'")
-    account = cursor.fetchone()
-    print(account)
-    return render_template("account.html",account=account)
-
-
 @app.route("/logout")
 def logout():
     session.clear()
