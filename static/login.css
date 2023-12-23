@@ -15,7 +15,7 @@ body{
    height: 100vh;
    background-repeat: no-repeat;
 }
-.container {
+.main_container {
    background-color: #fff;
    border-radius: 30px;
    box-shadow: 0 5px 15px rgba(0,0, 0.3, 0.35);
@@ -25,22 +25,22 @@ body{
    max-width: 100%;
    min-height: 480px;
 }
-.container p {
+.main_container p {
    font-size: 14px;
    line-height: 20px;
    letter-spacing: 0.3px;
    margin: 22px 0;
 }
-.container span{
+.main_container span{
    font-size: 12px;
 }
-.container a{
+.main_container a{
    color: #333;
    font-size: 13px;
    text-decoration: none;
    margin: 15px 0 10px;
 }
-.container button{
+.main_container button{
    background-color: #512da5;
    color: #fff;
    font-size: 12px;
@@ -53,11 +53,11 @@ body{
    margin: top 10px;
    cursor: pointer;
 }
-.container button.hidden{
+.main_container button.hidden{
    background-color: transparent;
    border-color: #fff;
 }
-.container form{
+.main_container form{
    background-color: #fff;
    display: flex;
    align-items: center;
@@ -66,7 +66,7 @@ body{
    padding: 0 40px;
    height: 100%;
 }
-.container input{
+.main_container input{
    background-color: #eee;
    border: none;
    margin: 8px 0;
@@ -86,7 +86,7 @@ body{
    width: 50%;
    z-index: 2;
 }
-.container.active .sign_in{
+.main_container.active .sign_in{
    transform: translateX(100%);
 }
 .sign_up{
@@ -95,7 +95,7 @@ body{
    z-index: 1;
    opacity: 0;
 }
-.container.active .sign_up{
+.main_container.active .sign_up{
    transform: translateX(100%);
    opacity: 1;
    z-index: 5;
@@ -122,7 +122,7 @@ body{
    border-radius: 150px 0 0 150px;
    z-index: 1000;
 }
-.container.active .toggle_container{
+.main_container.active .toggle_container{
    transform: translateX(-100%);
    border-radius: 0 150px 100px 0;
 
@@ -139,7 +139,7 @@ body{
    transform: translateX(0);
    transition: all 0.6s ease-in-out;
 }
-.container.active .toggle{
+.main_container.active .toggle{
    transform: translateX(50%);
 }
 .toggle_pannel{
@@ -159,19 +159,37 @@ body{
 .toggle_left{
    transform: translateX(-200%);
 }
-.container.active .toggle_left{
+.main_container.active .toggle_left{
    transform: translateX(0);
 }
 .toggle_right{
    right: 0;
    transform: translateX(0);
 }
-.container.active .toggle_right{
+.main_container.active .toggle_right{
    transform: translateX(200%);
 }
+<<<<<<< HEAD
+
+label{
+    margin-right: 20px;
+    margin-left: 10px;
+}
+
 .radio{
     display: flex;
     align-items: center;
+    left: 10px                                       ;
+}
+.radio_button{
+    margin-right: 25px;
+    justify-content: space-between;
+    padding-right: 20px;
+=======
+.radio{
+    display: flex;
+    align-items: center;
+>>>>>>> e7358b0a61dad1516a5732cdce249103e073f27a
     justify-content: space-between;
 }
 label{
